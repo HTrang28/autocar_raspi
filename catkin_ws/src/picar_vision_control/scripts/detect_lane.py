@@ -38,7 +38,7 @@ def make_points(frame, line):
 class DetectLane():
     def __init__(self):
         sub = rospy.Subscriber("/cv_camera/image_raw", Image, self.get_image)
-        self.pub = rospy.Publisher("face", Image, queue_size=1)
+        self.pub = rospy.Publisher("lane", Image, queue_size=1)
         self.bridge = CvBridge()
         self.image_org = None
         self.servo = rospy.Publisher('/servo', UInt16, queue_size=1)
